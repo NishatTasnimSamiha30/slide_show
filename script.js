@@ -1,10 +1,10 @@
-const Slideshow = document.querySelectorAll(".slied")
+const Slideshow = document.querySelectorAll(".Slideshow")
 var counter=0;
 // console.log(Slideshow)
 
 Slideshow.forEach(
-    (slide,index)=>{
-        slide.style.left =`${index * 100}%`
+    (Slideshow,index)=>{
+        Slideshow.style.left =`${index * 100}%`
     }
 )
 
@@ -25,8 +25,8 @@ const gonext =()=>{
 
 const slideimg=()=>{
     Slideshow.forEach(
-        (slide) =>{
-            slide.style.transfrom=`translatex(-${counter*100}%)`
+        (Slideshow) =>{
+            Slideshow.style.transfrom=`translatex(-${counter*100}%)`
         }
     )
 }
