@@ -1,32 +1,31 @@
-const Slideshow = document.querySelectorAll(".Slideshow")
-var counter=0;
-// console.log(Slideshow)
+let slideIndex = 0;
 
-Slideshow.forEach(
-    (Slideshow,index)=>{
-        Slideshow.style.left =`${index * 100}%`
+function showSlides() {
+    const slides = document.querySelectorAll('.slideshow');
+    
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
     }
-)
-
-const goback =()=>{
-    counter--
-    alert()
-    slideimg()
+    
+    slideIndex++;
+    
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    
+    slides[slideIndex - 1].style.display = 'block';
+    setTimeout(showSlides, 5000); 
 }
 
-
-
-
-const gonext =()=>{
-    counter++
-    alert()
-    slideimg()
+function goNext() {
+    slideIndex++;
+    showSlides();
 }
 
-const slideimg=()=>{
-    Slideshow.forEach(
-        (Slideshow) =>{
-            Slideshow.style.transfrom=`translatex(-${counter*100}%)`
-        }
-    )
+function goBack() {
+    slideIndex--;
+    showSlides();
 }
+
+// call slideshow
+showSlides();
